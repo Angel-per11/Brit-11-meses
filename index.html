@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff5f6">
+<title>11 meses de nosotros ❤️</title>
+<style>
+:root{--rose:#c65f7d;--deep:#79364d;--pink:#ffe8ee;--cream:#fffaf4;--ink:#442d35;--gold:#d7a85e}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(160deg,#fff8f5,#fff0f4 55%,#fce5ec);color:var(--ink);font-family:Georgia,"Times New Roman",serif;min-height:100vh}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(720px,100%);margin:auto;padding:22px 16px 56px}
+.topline{text-align:center;font:700 11px/1.4 Arial,sans-serif;letter-spacing:3px;color:var(--rose);text-transform:uppercase;margin:10px 0 20px}
+.panel{background:rgba(255,255,255,.82);border:1px solid #f1d3dc;border-radius:26px;padding:28px 22px;box-shadow:0 14px 38px #7d3b4c12;margin:16px 0;overflow:hidden}
+.hero{text-align:center;padding:42px 22px 36px;position:relative}
+.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:2px;color:var(--rose);text-transform:uppercase}
+h1{font-size:clamp(36px,9vw,58px);line-height:1.02;margin:16px 0;color:var(--deep);font-weight:normal}
+h2{font-size:29px;font-weight:normal;color:var(--deep);margin:0 0 12px}
+p{font-size:17px;line-height:1.65}
+.sub{color:#7b626a;font-size:16px}
+.heart{font-size:34px;display:inline-block;animation:beat 1.5s infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.15)}30%{transform:scale(1)}}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.reveal{animation:rise .65s ease both}
+.btn{border:0;border-radius:999px;padding:14px 20px;background:var(--rose);color:white;box-shadow:0 6px 15px #c65f7d35;transition:transform .18s,background .18s;display:inline-block}
+.btn:hover{transform:translateY(-2px);background:var(--deep)}
+.btn.secondary{background:#fff;color:var(--deep);border:1px solid #e7bac8;box-shadow:none}
+.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.hidden{display:none!important}
+.progress{height:5px;background:#f5dce4;border-radius:20px;overflow:hidden;margin:0 0 18px}
+.progress span{height:100%;display:block;background:var(--rose);width:0;transition:width .35s}
+.step-label{font:700 11px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
+.memory-visual{height:210px;border-radius:20px;background:linear-gradient(135deg,#f7d6df,#fff0e1);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:var(--deep);font-size:52px;margin:18px 0}.photo-visual{padding:0;overflow:hidden}.photo-visual img{width:100%;height:100%;object-fit:contain;background:#f7e7eb}
+.memory-visual small{display:block;font:13px Arial,sans-serif;letter-spacing:.5px;margin-top:12px;color:#81596a}
+.note{background:#fff4f6;border-left:3px solid var(--rose);padding:12px 15px;border-radius:0 12px 12px 0;line-height:1.6}
+.answers{display:grid;gap:10px;margin:20px 0}
+.answer{border:1px solid #e8c3cf;border-radius:15px;padding:13px 15px;background:#fff;color:var(--ink);text-align:left}
+.answer:hover,.answer:focus{border-color:var(--rose);background:#fff3f6}
+.feedback{min-height:28px;color:var(--deep);font-size:15px;line-height:1.5}
+.letter{background:#fffdf8;border:1px solid #ead8c2;border-radius:8px;padding:25px 20px;box-shadow:0 7px 20px #6b41400d}
+.letter p{font-size:17px}
+.footer{text-align:center;color:#9a7883;font:12px Arial,sans-serif;margin-top:28px;line-height:1.6}
+.sparkles{color:var(--gold);letter-spacing:8px;font-size:18px}
+@media(min-width:560px){.panel{padding:34px}.hero{padding:55px 35px 45px}.memory-visual{height:250px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="topline">Una pequeña sorpresa para nosotros</div>
+  <section class="panel hero" id="welcome">
+    <div class="sparkles">✦ ✧ ✦</div>
+    <div class="heart">❤️</div>
+    <p class="eyebrow">17 de octubre · 11 meses</p>
+    <h1>Mi Brit,<br>¿viajamos por<br>nuestra historia?</h1>
+    <p class="sub">Preparé este rinconcito para recordar, reírnos y celebrar todo lo bonito que hemos ido construyendo.</p>
+    <div class="actions"><button class="btn" id="startBtn">Abrir nuestra historia ✨</button></div>
+  </section>
+
+  <section class="panel hidden" id="journey">
+    <div class="progress"><span id="progressBar"></span></div>
+    <div class="step-label" id="stepLabel">Recuerdo 1 de 3</div>
+    <div id="journeyContent"></div>
+    <div class="actions">
+      <button class="btn secondary hidden" id="backBtn">← Volver</button>
+      <button class="btn" id="nextBtn">Siguiente ❤️</button>
+    </div>
+  </section>
+
+  <section class="panel hidden" id="quiz">
+    <div class="step-label">Un pequeño juego de nosotros</div>
+    <h2 id="questionTitle">¿Cuánto recuerdas?</h2>
+    <p id="questionText"></p>
+    <div class="answers" id="answerList"></div>
+    <div class="feedback" id="feedback" aria-live="polite"></div>
+    <div class="actions"><button class="btn hidden" id="continueQuiz">Siguiente pregunta →</button></div>
+  </section>
+
+  <section class="panel hidden" id="letterSection">
+    <div class="step-label">Un mensaje para ti</div>
+    <h2>Mi lugar bonito ❤️</h2>
+    <div class="letter">
+      <p>Mi Brit hermosa:</p>
+      <p>Hoy cumplimos 11 meses y quería regalarte algo distinto: un pequeño recorrido por nuestra historia, por esos momentos que nos han sacado sonrisas y por las cosas sencillas que se vuelven especiales cuando las comparto contigo.</p>
+      <p>Gracias por cada salida, cada conversación, cada abrazo y cada recuerdo que hemos ido guardando. No necesitamos que todo sea perfecto para valorar lo bonito que tenemos; me basta con seguir conociéndote, cuidando lo nuestro y encontrando nuevas razones para sonreír juntos.</p>
+      <p>Me encanta que seas parte de mi vida, mi Brit. Y si algo quiero que sepas hoy, es que sigo eligiendo compartir contigo muchos momentos más, paso a paso, con cariño y con alegría.</p>
+      <p><strong>Felices 11 meses, amorcito. ❤️</strong></p>
+      <p>Con todo mi cariño,<br>Ángel 💌</p>
+    </div>
+    <p class="sub">P.D. Esta historia todavía tiene muchas páginas por escribir… 😉</p>
+    <div class="actions"><button class="btn" id="restartBtn">Volver a empezar ↺</button></div>
+  </section>
+  <div class="footer">Hecho con cariño, para guardar un pedacito de nuestra historia. ❤️<br>Esta página es una sorpresa privada para compartir entre nosotros.</div>
+</main>
+<script>
+const memories = [
+ {title:"Una sonrisa que quiero guardar",emoji:"🌹",photo:"fotos/recuerdo-01.jpg",alt:"Ángel y Brit sonriendo juntos en una selfie",caption:"De esos abrazos que hacen que una foto se convierta en un recuerdo bonito. Me encanta verte sonreír, mi Brit."},
+ {title:"Un instante solo nuestro",emoji:"🌿",photo:"fotos/recuerdo-02.jpg",alt:"Ángel y Brit juntos durante una salida nocturna",caption:"A veces no hace falta un gran plan: una salida, una selfie y tenerte cerquita ya hacen especial el momento."},
+ {title:"Qué bonita te ves, mi Brit",emoji:"✨",photo:"fotos/recuerdo-03.jpg",alt:"Ángel y Brit elegantes en una ocasión especial",caption:"Y también están esos días en que te miro y pienso qué suerte la mía de compartir momentos contigo. ❤️"}
+];
+const questions = [
+ {q:"¿Qué lugar nos regaló un recuerdo especial entre puentes y paseos?",answers:["El Puente de los Suspiros","La cima del Everest","Un castillo en Disney"],correct:0,good:"¡Siii! ❤️ El Puente de los Suspiros tiene un rinconcito en nuestra historia.",bad:"Pista, amor: fue en Barranco, entre paseos y momentos especiales 😉"},
+ {q:"¿Qué viaje compartimos y nos regaló paisajes y anécdotas?",answers:["París","Tingo María","La Luna"],correct:1,good:"¡Tingo María! 🌿 Una aventura que forma parte de nuestros recuerdos.",bad:"¡Piénsalo otra vez, mi Brit! Fue nuestro viaje a Tingo María 🌿"},
+ {q:"¿Qué es lo que más importa en nuestros recuerdos?",answers:["Que todo salga perfecto","Tener la foto más bonita","Lo que vivimos y compartimos"],correct:2,good:"Exactamente, amorcito. 🥹 Lo bonito es lo que vivimos juntos.",bad:"La respuesta está en el corazón: lo que vivimos y compartimos ❤️"}
+];
+let stage=0, qIndex=0, answered=false;
+const $=id=>document.getElementById(id);
+function showOnly(id){["welcome","journey","quiz","letterSection"].forEach(x=>$(x).classList.toggle("hidden",x!==id));window.scrollTo({top:0,behavior:"smooth"});}
+function renderMemory(){
+ const m=memories[stage];
+ $("stepLabel").textContent=`Recuerdo ${stage+1} de ${memories.length}`;
+ $("progressBar").style.width=`${(stage+1)/(memories.length+1)*100}%`;
+ $("journeyContent").innerHTML=`<div class="reveal"><h2>${m.title}</h2><div class="memory-visual photo-visual"><img src="${m.photo}" alt="${m.alt}"></div><p>${m.caption}</p><div class="note">💌 <strong>Un recordatorio:</strong> cada momento contigo se convierte en una parte bonita de mi historia.</div></div>`;
+ $("backBtn").classList.toggle("hidden",stage===0);
+ $("nextBtn").textContent=stage===memories.length-1?"Vamos con las preguntas 💗":"Siguiente recuerdo →";
+}
+function renderQuestion(){
+ answered=false;
+ const q=questions[qIndex];
+ $("questionTitle").textContent=`Pregunta ${qIndex+1} de ${questions.length}`;
+ $("questionText").textContent=q.q;
+ $("feedback").textContent="";
+ $("continueQuiz").classList.add("hidden");
+ $("answerList").innerHTML="";
+ q.answers.forEach((a,i)=>{
+  const b=document.createElement("button");b.className="answer";b.textContent=a;
+  b.addEventListener("click",()=>{
+   if(answered)return;answered=true;
+   [...$("answerList").children].forEach(x=>x.disabled=true);
+   $("feedback").textContent=i===q.correct?q.good:q.bad;
+   b.style.borderColor="var(--rose)";b.style.background="#fff0f4";
+   $("continueQuiz").classList.remove("hidden");
+   $("continueQuiz").textContent=qIndex===questions.length-1?"Leer mi mensajito final 💌":"Siguiente pregunta →";
+  });$("answerList").appendChild(b);
+ });
+}
+$("startBtn").addEventListener("click",()=>{stage=0;showOnly("journey");renderMemory();});
+$("nextBtn").addEventListener("click",()=>{
+ if(stage<memories.length-1){stage++;renderMemory();}
+ else{qIndex=0;showOnly("quiz");renderQuestion();}
+});
+$("backBtn").addEventListener("click",()=>{if(stage>0){stage--;renderMemory();}});
+$("continueQuiz").addEventListener("click",()=>{
+ if(qIndex<questions.length-1){qIndex++;renderQuestion();}
+ else showOnly("letterSection");
+});
+$("restartBtn").addEventListener("click",()=>{stage=0;qIndex=0;showOnly("welcome");});
+</script>
+</body>
+</html>
